@@ -1,0 +1,122 @@
+@charset "utf-8";
+
+/*get %*/
+@function cent($options) {
+	@return ($options * 100%) / 1200;
+}
+
+/*get vw*/
+@function vw($target) {
+	$vw: (750 * 0.01) * 1px;
+	@return ($target / $vw) * 1vw;
+}
+
+@function vwsm($target) {
+	$vw: (480 * 0.01) * 1px;
+	@return ($target / $vw) * 1vw;
+}
+
+
+/*keyframes*/
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	}
+}
+
+/* base valiables */
+$fontjp: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN", "メイリオ", meiryo, sans-serif;
+$fontjp2: "游ゴシック Bold", "Yu Gothic Bold", "メイリオ", meiryo, sans-serif;
+$fonten: 'Roboto', sans-serif;
+$font-html: 62.5%;
+$contents-width: 1200px;
+$color-main: #000000;
+$white: #fff;
+$cl-gray: #f8f8f8;
+$cl-blue: #005bac;
+
+/* common mixins */
+@mixin fontsize($size, $base: 10) {
+	font-size: $size + px;
+	font-size: ($size / $base) * 1rem;
+}
+
+@mixin transition($options:.5s all ease) {
+	-webkit-transition: ($options);
+	-ms-transition: ($options);
+	-moz-transition: ($options);
+	transition: ($options);
+}
+
+@mixin transform($options) {
+	-webkit-transform: ($options);
+	-ms-transform: ($options);
+	-moz-transform: ($options);
+	transform: ($options);
+}
+
+@mixin animation($options) {
+	-webkit-animation: ($options);
+	-ms-animation: ($options);
+	-moz-animation: ($options);
+	animation: ($options);
+}
+
+@mixin dlflex {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: flex;
+}
+@mixin flex-wrap {
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+@mixin fl-column {
+	-webkit-box-orient: vertical;
+	-ms-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+@mixin fl-row {
+	-webkit-box-orient: horizontal;
+	-ms-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+}
+@mixin alignitems($options) {
+	-webkit-box-align: $options;
+	-ms-flex-align: $options;
+	align-items: $options;
+}
+
+@mixin flexwidth($options) {
+	-webkit-flex: 0 0 ($options);
+	-ms-flex: 0 0 ($options);
+	flex: 0 0 ($options);
+	max-width: ($options);
+}
+
+@mixin radius($options) {
+	-ms-border-radius: ($options);
+	-moz-border-radius: ($options);
+	-webkit-border-radius: ($options);
+	border-radius: ($options);
+}
+
+@mixin clearfix {
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}
+  

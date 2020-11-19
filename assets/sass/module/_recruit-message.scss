@@ -1,0 +1,143 @@
+@charset "utf-8";
+
+.box-content {
+    padding-top: 103px;
+    position: relative;
+    font-family: $fontjp;
+    &.interview-list {
+        padding-top: 170px;
+        .list-menu-page{
+            margin-top: 40px;
+        }
+        @media screen and (max-width: 768px) {
+            padding-top: 95px;
+        }
+    }
+    .box-message {
+        .main-img {
+            text-align: center;
+            width: 100%;
+            background: url('../images/message/bg-main.jpg');
+            @include clearfix;
+            display: table;
+            .maim-content {
+                position: relative;
+                width: 100%;
+                height: 548px;
+                display: table;
+                @media screen and (max-width: 480px) {
+                    height: vwsm(517px);
+                    .people-img {
+                        top: 0;
+                        bottom: auto;
+                    }
+                }
+            }
+            .people-img {
+                position: absolute;
+                bottom: 0;
+                right: 122px;
+                @media screen and (max-width: 950px) {
+                    right: 0;
+                }
+            }
+            .caption {
+                position: absolute;
+                bottom: 101px;
+                background: #005bac;
+                color: $white;
+                font-size: 22.11px;
+                text-align: left;
+                margin-left: 153px;
+                width: 333px;
+                height: 155px;
+                padding: 31px;
+                line-height: 1.5;
+                @include dlflex;
+                -webkit-animation: slide-up 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) both,fade-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+                animation: slide-up 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) both,fade-in 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+                flex-direction: column;
+                font-family: 'Yu Mincho', YuMincho, 'Hiragino Mincho ProN', serif;
+                @media screen and (max-width: 1024px) {
+                    margin-left: 0;
+                }
+                @media screen and (max-width: 750px) {
+                    width: 50vw;
+                    bottom: 13vw;
+                    padding: 15px;
+                    height: auto;
+                }
+                @media screen and (max-width: 480px) {
+                    font-size: 4.5vw;
+                }
+                span {
+                    font-size: 50.43px;
+                    @media screen and (max-width: 750px) {
+                        font-size: 8vw;
+                    }
+                }
+            }
+        }
+        .inner-content {
+            padding-bottom: 3px;
+            @media screen and (max-width: 750px) {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            .list-message {
+                margin-top: 52px;
+                .item-message {
+                    @include dlflex;
+                    justify-content: space-between;
+                    @media screen and (max-width: 750px) {
+                        flex-direction: column;
+                    }
+                    .item-col {
+                        max-width: 566px;
+                        width: 100%;
+                        .item-title {
+                            font-size: 36px;
+                            color: #005bac;
+                            font-family: $fontjp;
+                            font-weight: 600;
+                            line-height: 1.15;
+                            margin-top: -3px;
+                            letter-spacing: 1.6px;
+                            margin-bottom: 34px;
+                            @media screen and (max-width: 480px) {
+                                font-size: 24px;
+                            }
+                        }
+                        p {
+                            letter-spacing: 1px;
+                        }
+                        @media screen and (min-width: 751px) {
+                            & + .item-col {
+                                margin-left: 40px;
+                            }
+                        }
+                        @media screen and (max-width: 750px) {
+                            order: 1;
+                            &.img-col {
+                                order: 0;
+                                margin-bottom: 30px;
+                                margin-left: auto;
+                                margin-right: auto;
+                            }
+                        }
+                    }
+                    & + .item-message {
+                        margin-top: 71px;
+                    }
+                    @media screen and (min-width: 751px) {
+                        &:nth-child(2) {
+                            .item-title {
+                                margin-top: 22px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
